@@ -1,0 +1,215 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@+id/trackdetail_item_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/trackdetail_item_tags"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trackdetail_item_name"
+        android:layout_margin="1dp"
+        android:hint="@string/trackdetail_tags"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_surveyor"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_surveyor"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_tags"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_surveyor"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_project"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_project"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_surveyor"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_project"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_route_name"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_route_name"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_project"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_route_name"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_route_id"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_route_id"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_route_name"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_route_id"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_vehicle_type"
+            android:layout_marginRight="5dp" />
+        <Spinner
+            android:id="@+id/trackdetail_item_vehicle_type"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_route_id" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_headway_in_minutes"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_headway_in_minutes"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_vehicle_type"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_headway_in_minutes"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight=".33"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/trackdetail_fare_price"
+            android:layout_marginRight="5dp" />
+        <EditText
+            android:id="@+id/trackdetail_item_fare_price"
+            android:layout_width="0dp"
+            android:layout_weight=".67"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_headway_in_minutes"
+            android:layout_margin="1dp"
+            android:hint="@string/trackdetail_fare_price"
+            android:inputType="text"
+            android:singleLine="false"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/osm_visibility"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.33"/>
+        <Spinner
+            android:id="@+id/trackdetail_item_osm_visibility"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trackdetail_item_fare_price"
+            android:layout_weight=".67" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/trackdetail_item_description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trackdetail_item_osm_visibility"
+        android:layout_margin="1dp"
+        android:hint="@string/trackdetail_description"
+        android:inputType="text"
+        android:singleLine="false"
+        android:textSize="16sp"/>
+
+</merge>

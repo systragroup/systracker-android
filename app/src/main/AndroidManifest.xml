@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.kpktracker"
+    android:installLocation="auto"
+    android:versionCode="69"
+    android:versionName="1.0.12">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:description="@string/app_description"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/HighContrast"
+        android:requestLegacyExternalStorage="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name="net.kpktracker.activity.Intro"
+            android:label="@string/app_intro"
+            android:theme="@style/AppIntroStyle"/>
+        <activity
+            android:name="net.kpktracker.activity.TrackManager"
+            android:theme="@style/AppTheme"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.kpktracker.activity.TrackLogger"
+            android:label="@string/tracklogger"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="net.kpktracker.activity.Preferences"
+            android:label="@string/prefs" />
+        <activity
+            android:name="net.kpktracker.activity.WaypointList"
+            android:label="@string/wplist" />
+        <activity
+            android:name="net.kpktracker.activity.TrackDetail"
+            android:label="@string/trackdetail" />
+        <activity
+            android:name="net.kpktracker.activity.OpenStreetMapUpload"
+            android:label="@string/osm_upload">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="osm-upload"
+                    android:scheme="osmtracker" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="net.kpktracker.activity.About"
+            android:label="@string/about" />
+        <activity
+            android:name="net.kpktracker.activity.DisplayTrack"
+            android:label="@string/displaytrack" />
+        <activity
+            android:name="net.kpktracker.activity.DisplayTrackMap"
+            android:label="@string/displaytrackmap" />
+        <activity android:name="net.kpktracker.activity.ButtonsPresets">
+            <intent-filter>
+                <action android:name="launch_buttons_presets" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="net.kpktracker.activity.AvailableLayouts" />
+
+        <service
+            android:name="net.kpktracker.service.gps.GPSLogger"
+            android:foregroundServiceType="location"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="osmtracker.intent.GPS_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="net.kpktracker.db.TrackContentProvider"
+            android:authorities="net.kpktracker.provider"
+            android:exported="false" />
+
+        <receiver android:name="net.kpktracker.receiver.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="net.kpktracker.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+    </application>
+
+</manifest>
